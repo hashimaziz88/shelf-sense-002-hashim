@@ -30,10 +30,9 @@ def search_book(title):
         books_dict = {}
         for line in lines[1:]:
             line = line.strip().split(",")
-            print(line)
             books_dict[line[0]] = line[1]
     try:
-        book = {books_dict[title]:title}
+        book = {title:books_dict[title]}
         return book
     except:
         raise KeyError(f"The book you are looking for is not in the database")
